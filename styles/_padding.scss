@@ -1,0 +1,29 @@
+@mixin pad($amt: 0.25rem) {
+  padding: $amt;
+}
+
+@mixin pad-l($amt: 0.25rem) {
+  padding-left: $amt;
+}
+
+@mixin pad-r($amt: 0.25rem) {
+  padding-right: $amt;
+}
+
+@mixin pad-t($amt: 0.25rem) {
+  padding-top: $amt;
+}
+
+@mixin pad-b($amt: 0.25rem) {
+  padding-bottom: $amt;
+}
+
+@mixin pad-x($amt: 0.25rem) {
+  padding-left: $amt;
+  padding-right: $amt;
+}
+
+@mixin pad-y($amt: 0.25rem) {
+  padding-top: $amt;
+  padding-bottom: $amt;
+}

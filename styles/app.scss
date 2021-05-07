@@ -1,0 +1,25 @@
+@import 'page';
+@import 'grid';
+@import 'positioning';
+@import 'padding';
+
+.col,
+.col-1,
+.col-2,
+.col-3,
+.col-4,
+.col-5,
+.col-6,
+.col-7,
+.col-8,
+.col-9,
+.col-10,
+.col-11,
+.col-12 {
+  display: flex;
+  @include justify-content(center);
+  box-sizing: border-box;
+  border: 0.5px solid rgb(255, 170, 170);
+  @include pad-y(0.5rem);
+  @include pad-x(0.5rem);
+}
