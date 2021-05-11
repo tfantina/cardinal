@@ -1,3 +1,6 @@
+@mixin container($width: 90vw) {
+  width: $width;
+}
 @mixin grid($columns: 12) {
   display: grid;
   grid-template-columns: repeat($columns, 1fr);
@@ -6,6 +9,18 @@
 $column: calc(100% / 12);
 
 .container {
+  @include container(100vw);
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1100px;
+
+  @include media-sm {
+    @include container(95vw);
+  }
+
+  @include media-md {
+    @include container();
+  }
 }
 
 .row {
@@ -73,4 +88,167 @@ $column: calc(100% / 12);
 .col-12 {
   flex: 0 0 auto;
   width: calc(#{$column} * 12);
+}
+
+@include media-md {
+  .col-md {
+    flex: 1 0 0%;
+  }
+
+  .col-md-1 {
+    flex: 0 0 auto;
+    width: $column;
+  }
+
+  .col-md-2 {
+    flex: 0 0 auto;
+    width: calc(#{$column} * 2);
+  }
+
+  .col-md-3 {
+    flex: 0 0 auto;
+    width: calc(#{$column} * 3);
+  }
+
+  .col-md-4 {
+    flex: 0 0 auto;
+    width: calc(#{$column} * 4);
+  }
+
+  .col-md-5 {
+    flex: 0 0 auto;
+    width: calc(#{$column} * 5);
+  }
+  .col-md-6 {
+    flex: 0 0 auto;
+    width: calc(#{$column} * 6);
+  }
+  .col-md-7 {
+    flex: 0 0 auto;
+    width: calc(#{$column} * 7);
+  }
+
+  .col-md-8 {
+    flex: 0 0 auto;
+    width: calc(#{$column} * 8);
+  }
+
+  .col-md-9 {
+    flex: 0 0 auto;
+    width: calc(#{$column} * 9);
+  }
+
+  .col-md-10 {
+    flex: 0 0 auto;
+    width: calc(#{$column} * 10);
+  }
+
+  .col-md-11 {
+    flex: 0 0 auto;
+    width: calc(#{$column} * 11);
+  }
+
+  .col-md-12 {
+    flex: 0 0 auto;
+    width: calc(#{$column} * 12);
+  }
+}
+
+/* Ordering */
+.order-1 {
+  order: 1;
+}
+
+.order-2 {
+  order: 2;
+}
+
+.order-3 {
+  order: 3;
+}
+
+.order-4 {
+  order: 4;
+}
+
+.order-5 {
+  order: 5;
+}
+
+.order-6 {
+  order: 6;
+}
+
+.order-7 {
+  order: 7;
+}
+
+.order-8 {
+  order: 8;
+}
+
+.order-9 {
+  order: 9;
+}
+
+.order-10 {
+  order: 10;
+}
+
+.order-11 {
+  order: 11;
+}
+
+.order-12 {
+  order: 12;
+}
+
+@include media-md {
+  .order-md-1 {
+    order: 1;
+  }
+
+  .order-md-2 {
+    order: 2;
+  }
+
+  .order-md-3 {
+    order: 3;
+  }
+
+  .order-md-4 {
+    order: 4;
+  }
+
+  .order-md-5 {
+    order: 5;
+  }
+
+  .order-md-6 {
+    order: 6;
+  }
+
+  .order-md-7 {
+    order: 7;
+  }
+
+  .order-md-8 {
+    order: 8;
+  }
+
+  .order-md-9 {
+    order: 9;
+  }
+
+  .order-md-10 {
+    order: 10;
+  }
+
+  .order-md-11 {
+    order: 11;
+  }
+
+  .order-md-12 {
+    order: 12;
+  }
 }
