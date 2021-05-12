@@ -1,4 +1,5 @@
 @import 'variables';
+@import 'mixins';
 @import 'page';
 @import 'grid';
 @import 'positioning';
@@ -23,4 +24,13 @@
   border: 0.5px solid rgb(255, 170, 170);
   @include pad-y(0.5rem);
   @include pad-x(0.5rem);
+}
+
+.section {
+  @include width();
+  @include center();
+  @include max-width(1200px);
+  background-color: rgb(240, 240, 240);
+  padding: 1rem;
+  margin: 0.5rem;
 }

@@ -1,25 +1,18 @@
-@mixin container($width: 90vw) {
-  width: $width;
-}
-@mixin grid($columns: 12) {
-  display: grid;
-  grid-template-columns: repeat($columns, 1fr);
-}
-
 $column: calc(100% / 12);
+$columns: (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12);
+$breakpoints: ('xs', 'sm', 'md', 'lg', 'xl', 'xxl');
 
 .container {
-  @include container(100vw);
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 1100px;
+  @include width(100vw);
+  @include center;
+  @include max-width(1100px);
 
   @include media-sm {
-    @include container(95vw);
+    @include width(95vw);
   }
 
   @include media-md {
-    @include container();
+    @include width();
   }
 }
 
@@ -28,227 +21,65 @@ $column: calc(100% / 12);
   flex-wrap: wrap;
 }
 
+@mixin columns($size_prefix: '-') {
+  @each $value in $columns {
+    &#{$size_prefix}#{$value} {
+      flex: 0 0 auto;
+      width: calc(#{$column} * #{$value});
+    }
+  }
+}
+
 .col {
-  flex: 1 0 0%;
+  @include columns;
 }
 
-.col-1 {
-  flex: 0 0 auto;
-  width: $column;
+/* Flex Ordering */
+
+@mixin orders {
+  @each $value in $columns {
+    &-#{$value} {
+      order: $value;
+    }
+  }
 }
 
-.col-2 {
-  flex: 0 0 auto;
-  width: calc(#{$column} * 2);
+.order {
+  @include orders;
 }
 
-.col-3 {
-  flex: 0 0 auto;
-  width: calc(#{$column} * 3);
+@include media-xs {
+  .order-xs {
+    @include orders;
+  }
 }
 
-.col-4 {
-  flex: 0 0 auto;
-  width: calc(#{$column} * 4);
-}
-
-.col-5 {
-  flex: 0 0 auto;
-  width: calc(#{$column} * 5);
-}
-.col-6 {
-  flex: 0 0 auto;
-  width: calc(#{$column} * 6);
-}
-.col-7 {
-  flex: 0 0 auto;
-  width: calc(#{$column} * 7);
-}
-
-.col-8 {
-  flex: 0 0 auto;
-  width: calc(#{$column} * 8);
-}
-
-.col-9 {
-  flex: 0 0 auto;
-  width: calc(#{$column} * 9);
-}
-
-.col-10 {
-  flex: 0 0 auto;
-  width: calc(#{$column} * 10);
-}
-
-.col-11 {
-  flex: 0 0 auto;
-  width: calc(#{$column} * 11);
-}
-
-.col-12 {
-  flex: 0 0 auto;
-  width: calc(#{$column} * 12);
+@include media-sm {
+  .order-sm {
+    @include orders;
+  }
 }
 
 @include media-md {
-  .col-md {
-    flex: 1 0 0%;
-  }
-
-  .col-md-1 {
-    flex: 0 0 auto;
-    width: $column;
-  }
-
-  .col-md-2 {
-    flex: 0 0 auto;
-    width: calc(#{$column} * 2);
-  }
-
-  .col-md-3 {
-    flex: 0 0 auto;
-    width: calc(#{$column} * 3);
-  }
-
-  .col-md-4 {
-    flex: 0 0 auto;
-    width: calc(#{$column} * 4);
-  }
-
-  .col-md-5 {
-    flex: 0 0 auto;
-    width: calc(#{$column} * 5);
-  }
-  .col-md-6 {
-    flex: 0 0 auto;
-    width: calc(#{$column} * 6);
-  }
-  .col-md-7 {
-    flex: 0 0 auto;
-    width: calc(#{$column} * 7);
-  }
-
-  .col-md-8 {
-    flex: 0 0 auto;
-    width: calc(#{$column} * 8);
-  }
-
-  .col-md-9 {
-    flex: 0 0 auto;
-    width: calc(#{$column} * 9);
-  }
-
-  .col-md-10 {
-    flex: 0 0 auto;
-    width: calc(#{$column} * 10);
-  }
-
-  .col-md-11 {
-    flex: 0 0 auto;
-    width: calc(#{$column} * 11);
-  }
-
-  .col-md-12 {
-    flex: 0 0 auto;
-    width: calc(#{$column} * 12);
+  .order-md {
+    @include orders;
   }
 }
 
-/* Ordering */
-.order-1 {
-  order: 1;
-}
-
-.order-2 {
-  order: 2;
-}
-
-.order-3 {
-  order: 3;
-}
-
-.order-4 {
-  order: 4;
-}
-
-.order-5 {
-  order: 5;
-}
-
-.order-6 {
-  order: 6;
-}
-
-.order-7 {
-  order: 7;
-}
-
-.order-8 {
-  order: 8;
-}
-
-.order-9 {
-  order: 9;
-}
-
-.order-10 {
-  order: 10;
-}
-
-.order-11 {
-  order: 11;
-}
-
-.order-12 {
-  order: 12;
-}
-
-@include media-md {
-  .order-md-1 {
-    order: 1;
+@include media-lg {
+  .order-lg {
+    @include orders;
   }
+}
 
-  .order-md-2 {
-    order: 2;
+@include media-xl {
+  .order-xl {
+    @include orders;
   }
+}
 
-  .order-md-3 {
-    order: 3;
-  }
-
-  .order-md-4 {
-    order: 4;
-  }
-
-  .order-md-5 {
-    order: 5;
-  }
-
-  .order-md-6 {
-    order: 6;
-  }
-
-  .order-md-7 {
-    order: 7;
-  }
-
-  .order-md-8 {
-    order: 8;
-  }
-
-  .order-md-9 {
-    order: 9;
-  }
-
-  .order-md-10 {
-    order: 10;
-  }
-
-  .order-md-11 {
-    order: 11;
-  }
-
-  .order-md-12 {
-    order: 12;
+@include media-xxl {
+  .order-xxl {
+    @include orders;
   }
 }

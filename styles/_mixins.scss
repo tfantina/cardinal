@@ -1,0 +1,62 @@
+/* Mixins is the central repository for all @mixins used throughout Cardinal
+ Having them in a seperate file makes it easy to view mixins and import them
+ into your project's custom CSS components */
+
+/* Grid */
+
+@mixin grid($columns: 12) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+}
+
+/* Positioning */
+@mixin center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Sizing */
+@mixin width($width: 90vw) {
+  width: $width;
+}
+
+@mixin max-width($width: 100%) {
+  max-width: $width;
+}
+
+/* Flex positioning */
+
+@mixin justify-content($position) {
+  justify-content: $position;
+}
+
+/* Padding */
+@mixin pad($amt: 0.25rem) {
+  padding: $amt;
+}
+
+@mixin pad-l($amt: 0.25rem) {
+  padding-left: $amt;
+}
+
+@mixin pad-r($amt: 0.25rem) {
+  padding-right: $amt;
+}
+
+@mixin pad-t($amt: 0.25rem) {
+  padding-top: $amt;
+}
+
+@mixin pad-b($amt: 0.25rem) {
+  padding-bottom: $amt;
+}
+
+@mixin pad-x($amt: 0.25rem) {
+  padding-left: $amt;
+  padding-right: $amt;
+}
+
+@mixin pad-y($amt: 0.25rem) {
+  padding-top: $amt;
+  padding-bottom: $amt;
+}
