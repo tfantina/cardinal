@@ -1,6 +1,6 @@
 $column: calc(100% / 12);
 $columns: (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12);
-$breakpoints: ('xs', 'sm', 'md', 'lg', 'xl', 'xxl');
+$breakpoints: ('xs', 'sm', 'md', 'lg', 'xl', 'xx');
 
 .container {
   @include width(100vw);
@@ -72,8 +72,8 @@ $breakpoints: ('xs', 'sm', 'md', 'lg', 'xl', 'xxl');
   }
 }
 
-@include media-xxl {
-  .col-xxl {
+@include media-xx {
+  .col-xx {
     @include columns();
   }
 }
@@ -122,8 +122,8 @@ $breakpoints: ('xs', 'sm', 'md', 'lg', 'xl', 'xxl');
   }
 }
 
-@include media-xxl {
-  .order-xxl {
+@include media-xx {
+  .order-xx {
     @include orders;
   }
 }

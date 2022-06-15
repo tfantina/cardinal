@@ -29,7 +29,7 @@
   }
 }
 
-@mixin media-xxl {
+@mixin media-xx {
   @media (min-width: 1500px) {
     @content;
   }
