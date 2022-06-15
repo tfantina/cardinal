@@ -1,4 +1,7 @@
 ## About
+Largely abandoned... OG readme is below.  I'm leaving this as a dumping ground for my favourte SCSS snippits.  It's still fully functional, and I intend to always keep it that way so I can easily dip into this when/if needed.
+
+This project includes **the most useful SCSS I've ever written** see `styles/_flex.scss`.
 
 ### Framework 🏗️
 
