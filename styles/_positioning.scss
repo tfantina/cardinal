@@ -2,6 +2,11 @@
   display: flex;
 }
 
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
 .justify-content-center {
   @include justify-content(center);
 }
@@ -12,4 +17,24 @@
 
 .justify-content-end {
   @include justify-content(flex-end);
+}
+
+.align-items-between {
+  @include align-items(space-between);
+}
+
+.align-items-center {
+  @include align-items(center);
+}
+
+.align-items-start {
+  @include align-items(flex-start);
+}
+
+.align-items-end {
+  @include align-items(flex-end);
+}
+
+.text-center {
+  text-align: center;
 }

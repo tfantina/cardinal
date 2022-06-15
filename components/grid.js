@@ -108,7 +108,7 @@ export default function BasicGrid() {
 
       <div className='container'>
         <div className='row'>
-          <div className='col-sm-12 col-md-5'>
+          <div className='col-12 col-sm-8 col-lg-5'>
             This will be responsive at some point
           </div>
         </div>

@@ -20,14 +20,34 @@
   width: $width;
 }
 
+@mixin min-width($width: 100%) {
+  min-width: $width;
+}
+
 @mixin max-width($width: 100%) {
   max-width: $width;
+}
+
+@mixin height($height: 90vw) {
+  height: $height;
+}
+
+@mixin min-height($height: 100%) {
+  min-height: $height;
+}
+
+@mixin max-height($height: 100%) {
+  max-height: $height;
 }
 
 /* Flex positioning */
 
 @mixin justify-content($position) {
   justify-content: $position;
+}
+
+@mixin align-items($position) {
+  align-items: $position;
 }
 
 /* Padding */
@@ -59,4 +79,34 @@
 @mixin pad-y($amt: 0.25rem) {
   padding-top: $amt;
   padding-bottom: $amt;
+}
+
+@mixin margin($amt: 0.25rem) {
+  margin: $amt;
+}
+
+@mixin margin-l($amt: 0.25rem) {
+  margin-left: $amt;
+}
+
+@mixin margin-r($amt: 0.25rem) {
+  margin-right: $amt;
+}
+
+@mixin margin-t($amt: 0.25rem) {
+  margin-top: $amt;
+}
+
+@mixin margin-b($amt: 0.25rem) {
+  margin-bottom: $amt;
+}
+
+@mixin margin-x($amt: 0.25rem) {
+  margin-left: $amt;
+  margin-right: $amt;
+}
+
+@mixin margin-y($amt: 0.25rem) {
+  margin-top: $amt;
+  margin-bottom: $amt;
 }

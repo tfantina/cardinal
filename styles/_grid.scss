@@ -1,6 +1,6 @@
 $column: calc(100% / 12);
 $columns: (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12);
-$breakpoints: ('xs', 'sm', 'md', 'lg', 'xl', 'xxl');
+$breakpoints: ('xs', 'sm', 'md', 'lg', 'xl', 'xx');
 
 .container {
   @include width(100vw);
@@ -13,6 +13,14 @@ $breakpoints: ('xs', 'sm', 'md', 'lg', 'xl', 'xxl');
 
   @include media-md {
     @include width();
+  }
+}
+
+@include media-md {
+  .container-md {
+    @include width();
+    @include center;
+    @include max-width(1100px);
   }
 }
 
@@ -32,6 +40,42 @@ $breakpoints: ('xs', 'sm', 'md', 'lg', 'xl', 'xxl');
 
 .col {
   @include columns;
+}
+
+@include media-xs {
+  .col-sx {
+    @include columns();
+  }
+}
+
+@include media-sm {
+  .col-sm {
+    @include columns();
+  }
+}
+
+@include media-md {
+  .col-md {
+    @include columns();
+  }
+}
+
+@include media-lg {
+  .col-lg {
+    @include columns();
+  }
+}
+
+@include media-xl {
+  .col-xl {
+    @include columns();
+  }
+}
+
+@include media-xx {
+  .col-xx {
+    @include columns();
+  }
 }
 
 /* Flex Ordering */
@@ -78,8 +122,8 @@ $breakpoints: ('xs', 'sm', 'md', 'lg', 'xl', 'xxl');
   }
 }
 
-@include media-xxl {
-  .order-xxl {
+@include media-xx {
+  .order-xx {
     @include orders;
   }
 }
