@@ -1,0 +1,85 @@
+// Margins and Padding
+$sizes: ($space-3xs, $space-2xs, $space-xs, $space-s $space-m, $space-l, $space-xl, $space-2xl, $space-3xl);
+$sizenames: ('3xs', '2sx', 'xs', 's', 'm', 'l', 'xl', '2xl', '3xl');
+$i: 1;
+
+
+@function name($i) {
+  @return nth($sizenames, $i);
+}
+
+@mixin sizing($type, $prefix: '') {
+  @each $value in $sizes {
+    &#{$prefix}-#{name($i)} {
+      #{$type}: #{$value};
+    }
+
+    $i: $i + 1;
+  }
+}
+
+@mixin sizing-axis($type1, $type2) {
+  @each $value in $sizes {
+    &-#{name($i)} {
+      #{$type1}: #{$value};
+      #{$type2}: #{$value};
+    }
+
+    $i: $i + 1;
+  }
+}
+
+
+.p {
+  @include sizing('padding');
+  @include sizing('padding-top', 't');
+  @include sizing('padding-right', 'r');
+  @include sizing('padding-bottom', 'b');
+  @include sizing('padding-left', 'l');
+}
+
+.px {
+  @include sizing-axis('padding-left', 'padding-right')
+}
+
+
+.py {
+  @include sizing-axis('padding-top', 'padding-bottom');
+}
+
+.m {
+  @include sizing('margin');
+  @include sizing('mtop', 't');
+  @include sizing('mright', 'r');
+  @include sizing('mbottom', 'b');
+  @include sizing('mleft', 'l');
+}
+
+.my {
+  @include sizing-axis('margin-top', 'marign-bottom');
+}
+
+.mx {
+  @include sizing-axis('margin-right', 'margin-left');
+}
+
+@mixin py($amt: $space-xs) {
+  padding-top: $amt;
+  padding-bottom: $amt;
+}
+
+@mixin px($amt: $space-xs) {
+  padding-left: $amt;
+  padding-right: $amt;
+}
+
+@mixin my($amt: $space-xs) {
+ margin-top: $amt;
+ margin-bottom: $amt;
+}
+
+@mixin mx($amt: $space-xs) {
+ margin-left: $amt;
+ margin-right: $amt;
+}
+

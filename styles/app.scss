@@ -1,9 +1,7 @@
 @import 'variables';
-@import 'mixins';
+@import 'margins_and_padding';
 @import 'page';
 @import 'grid';
-@import 'positioning';
-@import 'padding';
 @import 'flex';
 
 .col,
@@ -23,15 +21,13 @@
   @include justify-content(center);
   box-sizing: border-box;
   border: 0.5px solid rgb(255, 170, 170);
-  @include pad-y(0.5rem);
-  @include pad-x(0.5rem);
+  @include py(0.5rem);
+  @include px(0.5rem);
 }
 
 .section {
-  @include width();
   @include center();
-  @include max-width(1200px);
   background-color: rgb(240, 240, 240);
-  padding: 1rem;
-  margin: 0.5rem;
+  // padding: 1rem;
+  // margin: 0.5rem;
 }
